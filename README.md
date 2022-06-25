@@ -38,7 +38,7 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
 
 1) ## Calculate the OG operator
 
-   `specialn` function of onion structure change law:
+   `specialn` function (MATLAB version) of onion structure change law:
 
    ```matlab
    function [fx, fy] = fspecialn(r, fn)
@@ -72,7 +72,7 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
    end
    ```
 
-   another more flexible type `fspecialxy`:
+   another more flexible type `fspecialxy` (MATLAB version):
 
    ```matlab
    function [fx, fy] = fspecialxy(r, fxy)
@@ -105,7 +105,7 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
 
 2) ## Evaluate the lower threshold adaptively
 
-   `estimate_lower_threshold` function declaration:
+   `estimate_lower_threshold` function declaration (MATLAB version):
 
    > The source code will be published after the article is accepted.
 
@@ -130,7 +130,7 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
 
 3) ## Extract the stylized edge
 
-   `stylized_edge_og` function declaration:
+   `stylized_edge_og` function declaration (MATLAB version):
 
    > The source code will be published after the article is accepted.
 
@@ -142,10 +142,30 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
    % - seog : The Stylized edge output based on OG
    % - lth : The lower threshold of Gr1
        arguments
-           I (:,:)  double                        % Orignal image
-           r (1,1) double                       % radius `r` according to Gt2
-           n (1,1) double  = 16             % Minimum search step, default is 16
+           I (:,:)  double       % Orignal image
+           r (1,1) double        % radius `r` according to Gt2
+           n (1,1) double  = 16  % Minimum search step, default is 16
        end
    ```
+
+
+
+# Test environment
+
+- System: `Windows 10 64-bit`
+- CPU: `i7-7500U @ 2.70 GHz`
+- Memory: `32.0 GB`
+- Software: [`MATLAB R2020b Trial version`](https://www.mathworks.com/products/new_products/release2020b.html) or [`GNU Octave v7.1.0`](https://octave.org/download#ms-windows)
+
+## How to run?
+
+- For [`MATLAB R2020b Trial version`](https://www.mathworks.com/products/new_products/release2020b.html),  start MATLAB and open the test script file `test_seog_on_MATLAB.mlx`;
+- For [`GNU Octave v7.1.0`](https://octave.org/download#ms-windows), start Octave and run the test script `test_seog_on_Octave.m`;
+
+> **Note:**
+>
+> We have implemented this source code compatible with MATLAB and Octave, but before our paper is accepted, the Octave version cannot be tested, because the core functions are in the form of [`pcode`](https://ww2.mathworks.cn/help/matlab/ref/pcode.html?lang=en), but Octave does not support it yet.
+
+
 
    

@@ -1,10 +1,11 @@
 function [fx, fy] = fspecialxy(r, fxy)
 % calculate the Omnidirectional Gradient operator at X/Y axises,
 % `fxy` is the decay factor mask matrix, with the size of (2*r+1)x(2*r+1).
-    arguments
-        r int16                      % radius
-        fxy (:,:)  double         % decay function
-    end
+%
+% OUTPUTS:
+% - fx : The X direction operator of OG
+% - fy : The Y direction operator of OG
+
     % assert fxy
     [h, w] = size(fxy);
     assert(r>=1 && h==w && h==(2*r+1));

@@ -4,11 +4,6 @@ function [ec, ef]=cross_edge(Gr, lth)
 % OUTPUTS:
 % - ec: cross edge
 % - ef: full possibility edge
-    arguments
-        Gr (:,:) double                     % Magnitude of OG
-        lth (1,1) double = eps        %  Lower threshold
-        % default value `eps` is the minimal float relative accuracy
-    end
     [h, w] = size(Gr);
     rr = 2:h-1;
     cc = 2:w-1;

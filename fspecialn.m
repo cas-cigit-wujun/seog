@@ -1,10 +1,11 @@
 function [fx, fy] = fspecialn(r, fn)
 % Calculate the Omnidirectional Gradient operator at X/Y axises.
 % this is a simple special case of f(i,j), fn is changed related to n, n = max(|i|,|j|).
-    arguments
-        r int16                  % radius
-        fn (1,:)  double         % decay function
-    end
+%
+% OUTPUTS:
+% - fx : The X direction operator of OG
+% - fy : The Y direction operator of OG
+
     % assert fn    
     assert(r>=1 && length(fn)==r);
     
