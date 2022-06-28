@@ -152,10 +152,13 @@ Compared to [Canny](https://en.wikipedia.org/wiki/Canny_edge_detector)：
 
 # Test environment
 
-- System: `Windows 10 64-bit`
-- CPU: `i7-7500U @ 2.70 GHz`
-- Memory: `32.0 GB`
-- Software: [`MATLAB R2020b Trial version`](https://www.mathworks.com/products/new_products/release2020b.html) or [`GNU Octave v7.1.0`](https://octave.org/download#ms-windows)
+- **System**: `Windows 10 64-bit`
+- **CPU**: `i7-7500U @ 2.70 GHz`
+- **Memory**: `32.0 GB`
+- **Software**: [`MATLAB R2020b Trial version`](https://www.mathworks.com/products/new_products/release2020b.html) or [`GNU Octave v7.1.0`](https://octave.org/download#ms-windows)
+- **Dataset**: [(Berkeley Segmentation Dataset and Benchmark) BSDS500](http://www.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/BSR/BSR_bsds500.tgz) is used to evaluate the stylized edge extraction effect of RGB color images, and the [FLIR thermal dataset ](https://www.flir.asia/oem/adas/adas-dataset-form/)is used to evaluate the stylized edge extraction effect of infrared images.
+
+
 
 ## How to run?
 
