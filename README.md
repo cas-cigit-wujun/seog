@@ -4,7 +4,7 @@
 
 # Abstract
 
-​	Gradient calculation is a low-level technique widely used in image processing. Where the gradient magnitude is large, the pixel value in the field changes greatly, and where the gradient magnitude is small, the pixel value in the field changes little. Traditional edge extraction algorithms are based on this, but usually need to manually set a magnitude threshold to distinguish. This paper innovatively bring out the concept of omnidirectional gradient, which uses flexible convolution kernel radius and special law to calculate, and omnidirectional gradient pay more attention to gradient direction and analyses the relationship and change of the gradient direction under different kernel radius. Based on the concept and features of omnidirectional gradient, we present an algorithm for stylized edge extraction, which overcomes the disadvantage of the existing classical edge extraction algorithms that require manual thresholding. Experimental results indicate that the proposed stylized edge extraction method outperforms the traditional edge extraction methods in terms of adaptive, consistency and more visually friendly for infrared images. Besides, the proposed algorithm is fast and has O(N) time complexity, its results can be used as the input for subsequent applications in real-time.
+​	Gradient computing is a low-level technology widely used in image processing. For large gradient magnitude, the pixel value in the field changes a lot, and for small gradient magnitude the pixel in the domain changes little. This is the basis of classical edge extraction algorithms, but it is often necessary to manually set thresholds to differentiate. This paper innovatively brings out the concept of omnidirectional gradient, which uses flexible convolution kernel radius and special law to calculate, and omnidirectional gradient pays more attention to gradient direction and analyzes the relationship and change of the gradient direction with different kernel radius. We present here an algorithm for stylized edge extraction based on omnidirectional gradient, overcoming the drawback of classical edge extraction algorithms that require manual thresholding. Experimental results show that the proposed method outperforms the classical edge extraction methods in terms of adaptive, consistent, and visually friendlier features for infrared imaging. In addition, the algorithm is fast and efficient, its result can be used as real-time input for subsequent applications.
 
 ## Keywords
 
@@ -12,17 +12,23 @@
 
 
 
-# What is Omnidirectional Gradient?
+# What is Omnidirectional Gradient(OG)?
 
 OG is calculated with flexible kernel radius $r$ and specific law of some function $f(i,j)$.
 
 ![image-20220625123913312](README/image-20220625123913312.png)
 
+# Why OG?
 
+OG is calculated with flexible radius $r$ and specific law of some function $f(i,j)$. Therefore, OG has following benefit features:
+
+- Fully compatible with traditional gradient calculation, e.g. if set the kernel radius $r=1$ and  $f(i,j) \in [\sqrt2,2,\sqrt2;2,0,2;\sqrt2,2,\sqrt2]$, it is equal to Sobel as shown in Fig. 2 (a).
+- Noise insensitive with larger radius or specific law, but noise sensitive with smaller radius.
+- Performing multiple OG calculations with different kernel radius on the same input image is equivalent to human vision observing oil paintings at different distances, their difference can help to determine the edge regions and the flat regions.
 
 # Algorithm characteristics and effects
 
-- Compute fast with $O(N)$ time complexity;
+- Compute fast with $O(2MN)$ time complexity;
 - The edge threshold is calculated adaptively, and it has good performance for infrared images with different signal strengths;
 - The stylized edge is no longer a binary image. It is a grayscale image, which can reflect the signal intensity contrast, is more friendly to human vision, and retains more detailed information.
 
